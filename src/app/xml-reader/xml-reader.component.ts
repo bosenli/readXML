@@ -22,23 +22,24 @@ export class XmlReaderComponent{
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(xmlString, 'application/xml');
     this.xmlContent = xmlDoc.documentElement.outerHTML;
-    const allElements = xmlDoc.getElementsByTagName('*');
+    const itemElements = xmlDoc.getElementsByTagName('Item');
+    const itemsData: any[] = [];
 
-    const tagData: any[] = [];
 
-    for (let i = 0; i < allElements.length; i++) {
-      const element = allElements[i];
+    for (let i = 0; i < itemElements.length; i++) {
+      const item = itemElements[i];
+      const titleElement = item.getElementsByTagName('Title')[0];
+      const numberElement = item.getElementsByTagName('Number')[0];
+      const amountElement = item.getElementsByTagName('Amount')[0];
 
-      // Check if the element has any child elements
-      if (element.children.length === 0) {
-        tagData.push({
-          tagName: element.tagName,
-          data: element.textContent
-        });
-      }
+      itemsData.push({
+        title: titleElement.textContent,
+        number: numberElement.textContent,
+        amount: amountElement.textContent
+      });
     }
 
-    this.xmlContent = tagData;
+    this.xmlContent = itemsData;
 
   }
 }

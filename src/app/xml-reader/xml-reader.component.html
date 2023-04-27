@@ -1,20 +1,21 @@
 <div>
-  <h1>Select an XML file</h1>
-  <input type="file" (change)="onFileChange($event)" accept=".xml">
+  <div>
+    <h1>Select an XML file</h1>
+    <input type="file" (change)="onFileChange($event)" accept=".xml">
+  </div>
+  <div *ngIf="xmlContent">
+    <h2>XML Content:</h2>
+    <table style="border-collapse: collapse; width: 50%;">
+      <tr>
+        <th style="border: 1px solid black; padding: 8px;">Title</th>
+        <th style="border: 1px solid black; padding: 8px;">Number</th>
+        <th style="border: 1px solid black; padding: 8px;">Amount</th>
+      </tr>
+      <tr *ngFor="let item of xmlContent">
+        <td style="border: 1px solid black; padding: 8px;">{{ item.title }}</td>
+        <td style="border: 1px solid black; padding: 8px;">{{ item.number }}</td>
+        <td style="border: 1px solid black; padding: 8px;">{{ item.amount }}</td>
+      </tr>
+    </table>
+  </div>
 </div>
-<div *ngIf="xmlContent">
-  <h2>XML Content:</h2>
-  <table>
-    <tr>
-      <th>Field Name</th>
-      <th>Data</th>
-    </tr>
-    <tr *ngFor="let item of xmlContent">
-      <td>{{ item.tagName }}</td>
-      <td>{{ item.data }}</td>
-    </tr>
-  </table>
-</div>
-
-
-
