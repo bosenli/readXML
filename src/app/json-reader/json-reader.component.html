@@ -1,0 +1,11 @@
+<div>
+  <div>
+    <h1>Select an JSON file</h1>
+    <input type="file" (change)="onFileSelected($event)" accept=".xml">
+  </div>
+  <div class="component-container">
+  <button (click)="convertToJson()">Convert to PostgreSQL Query</button>
+  </div>
+  <p>{{query}}</p>
+</div>
+
