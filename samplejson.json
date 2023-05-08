@@ -1,0 +1,8 @@
+{
+  "from": "customers",
+  "table": "orders",
+  "where": {
+    "division": "New York",
+    "postcode": 10001
+  }
+}

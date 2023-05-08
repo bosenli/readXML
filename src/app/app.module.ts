@@ -4,12 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { XmlReaderComponent } from './xml-reader/xml-reader.component';
 import { FormsModule } from '@angular/forms';
+import { JsonReaderComponent } from './json-reader/json-reader.component';
+import { FormConvertToJSONComponent } from './form-convert-to-json/form-convert-to-json.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    XmlReaderComponent
+    XmlReaderComponent,
+    JsonReaderComponent,
+    FormConvertToJSONComponent
   ],
   imports: [
     BrowserModule,

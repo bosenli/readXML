@@ -1,0 +1,19 @@
+<form (submit)="onSubmit()">
+  <div>
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" [(ngModel)]="formData.title" required>
+  </div>
+  <div>
+    <label for="id">ID:</label>
+    <input type="number" id="id" name="id" [(ngModel)]="formData.id" required>
+  </div>
+  <div>
+    <label for="division">Division:</label>
+    <input type="text" id="division" name="division" [(ngModel)]="formData.division" required>
+  </div>
+  <div>
+    <label for="postcode">Postcode:</label>
+    <input type="number" id="postcode" name="postcode" [(ngModel)]="formData.postcode" required>
+  </div>
+  <button type="submit">Download JSON</button>
+</form>
